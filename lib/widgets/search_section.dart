@@ -26,6 +26,11 @@ class SearchSection extends StatelessWidget {
           width: 700,
           decoration: BoxDecoration(
             color: AppColors.searchBar,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+              color: AppColors.searchBarBorder,
+              width: 1.5
+            )
           ),
           child: Column(
             children: [
@@ -39,11 +44,13 @@ class SearchSection extends StatelessWidget {
                       fontSize: 16,
                     ),
                     border: InputBorder.none,
+                    isDense: true,
+                    contentPadding: EdgeInsets.zero,
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Row(
                   children: [
                     SearchBarButton(
