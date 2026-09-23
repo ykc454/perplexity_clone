@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/services/chat_web_service.dart';
 import 'package:perplexity_clone/widgets/search_section.dart';
 
 import '../theme/colors.dart';
 import '../widgets/side_bar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String fullResponse = "";
+  @override
+  void initState() {
+    super.initState();
+    ChatWebService().connect();
+  }
 
   @override
   Widget build(BuildContext context) {

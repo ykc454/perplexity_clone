@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+
+import '../widgets/answer_section.dart';
+import '../widgets/side_bar.dart';
+import '../widgets/sources_section.dart';
+
+class ChatPage extends StatelessWidget {
+  final String question;
+  const ChatPage({super.key, required this.question});
+
+  // StreamBuilder(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Row(
+        children: [
+          SideBar(),
+          const SizedBox(width: 100),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  children: [
+                    Text(question,style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    ),
+                    SizedBox(height: 24,),
+                    SourcesSection(),
+                    SizedBox(height: 24,),
+                    AnswerSection(),
+                  ],
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
